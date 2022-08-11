@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title>SIGEC</title>
+    <link rel="stylesheet" href="../style/css/style.css" />
+
+    <!--Boxicons CSS-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxs-calendar'></i>
+            <span class="logo_name">SIGEC</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    <i class='bx bx-search-alt'></i>
+                    <input type="text" placeholder="Pesquisar..." />
+                </a>
+                <ul class="sub-menu blank">
+                    <li>
+                        <a class="link_name" href="#">Pesquisar</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="inicioCliente.html">
+                    <i class='bx bx-calendar-star'></i>
+                    <span class="link_name">Calendário</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li>
+                        <a class="link_name" href="inicioCliente.html">Calendário</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class='bx bxs-calendar-check'></i>
+                    <span class="link_name">Agendar</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li>
+                        <a class="link_name" href="#">Agendar</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bx-list-check'></i>
+                        <span class="link_name">Horários Agendados</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="todolist.html">Ver Horários Agendados</a></li>
+                    <li><a href="todolist.html">Horários Semanais</a></li>
+                    <li><a href="#">Horários Mensais</a></li>
+                    <li><a href="#">Horários Diários</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class='bx bxs-contact'></i>
+                    <span class="link_name">Lista de Contatos</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li>
+                        <a class="link_name" href="#">Lista de Contatos</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="link_name">Gerência</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li>
+                        <a class="link_name" href="#">Gerência</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                        <img src="../Style/images/perfil.jpg" alt="perfil" />
+                    </div>
+                    <div class="name-job">
+                        <div class="profile_name">Alexander</div>
+                        <div class="job">Web Desginer</div>
+                    </div>
+                    <i class='bx bx-log-out' id="log_out"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="home-content">
+            <nav>
+                <div class="sidebar-button">
+                    <i class='bx bx-menu' id="btn"></i>
+                    <span class="text">Menu</span>
+                    <!-- <ul>
+                         <li>
+                             <div class="profile-details">
+                                 <div class="profile-content">
+                                     <img src="Style/images/perfil.jpg" alt="perfil" />
+                                 </div>
+                                 <div class="name-job">
+                                     <div class="profile_name">Alexander</div>
+                                     <div class="job">Web Desginer</div>
+                                 </div>
+                                 <i class='bx bx-log-out' id="log_out"></i>
+                             </div>
+                         </li>
+                     </ul>-->
+                </div>
+            </nav>
+        </div>
+
+        <iframe src="calendario.html"></iframe>
+    </section>
+
+
+    <!--<div class="body">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FSao_Paulo" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>-->
+    <script>
+            let searchBtn = document.querySelector("bx-search-alt");
+            let btn = document.querySelector("#btn");
+
+            let arrow = document.querySelectorAll(".arrow");
+
+            for (var i = 0; i < arrow.length; i++) {
+                arrow[i].addEventListener("click", (e) => {
+                    let arrowParent = e.target.parentElement.parentElement;
+                    arrowParent.classList.toggle("showMenu");
+                });
+            }
+            let sidebar = document.querySelector(".sidebar");
+            let sidebarbtn = document.querySelector(".bx-menu");
+            console.log(sidebarbtn);
+            sidebarbtn.addEventListener("click", () => {
+                sidebar.classList.toggle("close");
+            });
+
+            btn.onclick = function () {
+                sidebar.classList.toggle("active");
+            }
+
+            searchBtn.onclick = function () {
+                sidebar.classList.toggle("active");
+            }
+
+
+
+    </script>
+</body>
+</html>     
