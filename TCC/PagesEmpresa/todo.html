@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8"/>
+        <title>SIGEC</title>
+        <link rel="stylesheet" href="../../style/css/style.css"/>
+        <link rel="stylesheet" href="../../style/css/todo.css"/>
+        <!--Boxicons CSS-->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;
+                background-color: rgb(30, 30, 30);
+            }
+
+            .home-section {
+                overflow: scroll;
+            }
+
+            .home-section .home-content {
+                width: 100%;
+            }
+
+            #listaTarefas div {
+                margin-left: -50%;
+            }
+
+            .listGroup {
+                display: flex;
+                border-radius: 15px;
+                padding-bottom: 1%;
+            }
+
+            .list {
+                background-color: gray;
+                margin: 1%;
+                margin-bottom: auto;
+                padding-left: 1%;
+                /* 13.5px =1% */
+                padding-right: 1%;
+                padding-top: 0.5%;
+                padding-bottom: 1%;
+                border-radius: 5px;
+            }
+
+            .textContent {
+                background-color: gray;
+                /* width: 165px; */
+                /* height: 17px; */
+                width: 195px;
+                height: 25.5px;
+                font-size: 95%;
+                border: none;
+                color: black;
+                outline: none;
+                border-radius: 5px;
+                margin: 2px 0;
+            }
+
+            .realButton {
+                background-color: rgba(255, 255, 255, 0.788);
+                position: relative;
+                height: 21px;
+                width: 21px;
+                margin-left: -24px;
+                bottom: 1px;
+                border: none;
+                border-radius: 5px;
+                font-size: 10px;
+            }
+
+            #cardCreated {
+                background-color: white;
+                /* width: 163px;
+          height: 17px; */
+                text-align: left;
+            }
+
+            #cardCreated:hover, .realButton:hover {
+                background-color: rgb(204, 204, 204);
+            }
+
+            .contentCard {
+                text-indent: 4px;
+            }
+
+            .contentCard:focus {
+                background-color: white;
+                width: 191px;
+                /* height: 13px; */
+                height: 21.5px;
+                border: solid;
+                border-width: 2px;
+                border-color: rgb(0, 120, 255);
+                text-indent: 2px;
+                /* text-indet do .contentCard -2px */
+            }
+
+            .buttonCard::placeholder, .buttonCard:focus:hover::placeholder {
+                color: darkgrey;
+            }
+
+            .buttonCard:hover {
+                background-color: rgb(117, 117, 117);
+            }
+
+            .buttonCard:focus {
+                background-color: white;
+            }
+
+            .buttonCard:hover::placeholder {
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Pré carregamento -->
+        <!--<div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="../Style/img/SIGECLogo.png" alt="SIGECLogo" height="60" width="60">
+  </div>-->
+        <!--Menu/Barra Lateral-->
+        <div class="sidebar">
+            <div class="logo-details">
+                <a href="inicioEmpresa.html">
+                    <i class='bx bxs-calendar'></i>
+                    <span class="logo_name">SIGEC</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#">
+                        <i class='bx bx-search-alt'></i>
+                        <input type="text" placeholder="Pesquisar..."/>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li>
+                            <a class="link_name" href="#">Pesquisar</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="icon-link">
+                        <a href="todo.html">
+                            <i class='bx bx-list-check'></i>
+                            <span class="link_name">To Do List</span>
+                        </a>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a class="link_name" href="todo.html">To Do List</a>
+                        </li>
+                        <li>
+                            <a href="todolist.html">Semanal</a>
+                        </li>
+                        <li>
+                            <a href="#">Mensal</a>
+                        </li>
+                        <li>
+                            <a href="#">Diário</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="cadastrarFuncionario.html">
+                        <i class='bx bx-group'></i>
+                        <span class="link_name">Funcionários</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li>
+                            <a class="link_name" href="cadastrarFuncionario.html">Funcionários</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="icon-link">
+                        <a href="#">
+                            <i class='bx bx-list-check'></i>
+                            <span class="link_name">Gerência</span>
+                        </a>
+                        <i class='bx bx-chevron-down arrow'></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a class="link_name" href="#">Gerência</a>
+                        </li>
+                        <li>
+                            <a href="#">Gerenciar Horários</a>
+                        </li>
+                        <li>
+                            <a href="#">Atualizar Horários </a>
+                        </li>
+                        <li>
+                            <a href="gerenciarServicos.html">Gerenciar Serviços</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="profile-details">
+                        <div class="profile-content">
+                            <a href="gerenciarPerfil.html"><img src="../../Style/images/perfil.jpg" alt="perfil" /></a>
+                        </div>
+                        <div class="name-job">
+                            <div class="profile_name">Hanna</div>
+                            <div class="job">Secretária</div>
+                        </div>
+                        <i class='bx bx-log-out' id="log_out"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <div class="home-content">
+                <nav>
+                    <div class="sidebar-button">
+                        <i class='bx bx-menu' id="btn"></i>
+                        <span class="text">Menu</span>
+                        <!-- <ul>
+                        <li>
+                            <div class="profile-details">
+                                <div class="profile-content">
+                                    <img src="Style/images/perfil.jpg" alt="perfil" />
+                                </div>
+                                <div class="name-job">
+                                    <div class="profile_name">Alexander</div>
+                                    <div class="job">Web Desginer</div>
+                                </div>
+                                <i class='bx bx-log-out' id="log_out"></i>
+                            </div>
+                        </li>
+                    </ul>-->
+                    </div>
+                </nav>
+            </div>
+            <div class="listGroup">
+                <div class="list conteudo">
+                    <div class="">
+                        <input class="textContent contentCard" type="text" placeholder="Iniciado" value="Iniciado" style="font-size: 1.2rem; color: white; background: gray;">
+                        <br>
+                    </div>
+                    <div class="topo">
+                        <input type="text" id="inputNovaTarefa" placeholder="Adicione uma nova tarefa">
+                        <button id="btnAddTarefa">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <ul id="listaTarefas">
+                        <li>
+                            <span class="textoTarefa"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="janelaEdicao">
+                    <button id="janelaEdicaoBtnFechar">
+                        <i class="fa fa-remove fa-2x"></i>
+                    </button>
+                    <h2 id="idTarefaEdicao">#0001</h2>
+                    <hr>
+                    <form>
+                        <div class="frm-linha">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="inputTarefaNomeEdicao">
+                        </div>
+                        <div class="frm-linha">
+                            <button id="btnAtualizarTarefa">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="janelaEdicaoFundo"></div>
+                
+                <!-- <div class="list">
+                    <input type="text" class="textContent contentCard" value="Fazendo">
+                    <br/>
+                    <input type="text" id="cardList1" class="textContent buttonCard " placeholder="+ Adicionar Card">
+                </div> -->
+                <div class="list conteudo">
+                    <div class="">
+                        <input class="textContent contentCard" type="text" placeholder="Fazendo" value="Fazendo" style="font-size: 1.2rem; color: white; background: gray;">
+                        <br>
+                    </div>
+                    <div class="topo">
+                        <input type="text" id="inputNovaTarefa" placeholder="Adicione uma nova tarefa">
+                        <button id="btnAddTarefa">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <ul id="listaTarefas">
+                        <li>
+                            <span class="textoTarefa"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="janelaEdicao">
+                    <button id="janelaEdicaoBtnFechar">
+                        <i class="fa fa-remove fa-2x"></i>
+                    </button>
+                    <h2 id="idTarefaEdicao">#0001</h2>
+                    <hr>
+                    <form>
+                        <div class="frm-linha">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="inputTarefaNomeEdicao">
+                        </div>
+                        <div class="frm-linha">
+                            <button id="btnAtualizarTarefa">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="janelaEdicaoFundo"></div>
+
+                <!-- <div class="list">
+                    <input type="text" class="textContent contentCard" value="Encerrado">
+                    <br/>
+                    <input type="text" id="cardList1" class="textContent buttonCard " placeholder="+ Adicionar Card">
+                </div> -->
+                <div class="list conteudo">
+                    <div class="">
+                        <input class="textContent contentCard" type="text" placeholder="Encerrado" value="Encerrado" style="font-size: 1.2rem; color: white; background: gray;">
+                        <br>
+                    </div>
+                    <div class="topo">
+                        <input type="text" id="inputNovaTarefa" placeholder="Adicione uma nova tarefa">
+                        <button id="btnAddTarefa">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <ul id="listaTarefas">
+                        <li>
+                            <span class="textoTarefa"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="janelaEdicao">
+                    <button id="janelaEdicaoBtnFechar">
+                        <i class="fa fa-remove fa-2x"></i>
+                    </button>
+                    <h2 id="idTarefaEdicao">#0001</h2>
+                    <hr>
+                    <form>
+                        <div class="frm-linha">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="inputTarefaNomeEdicao">
+                        </div>
+                        <div class="frm-linha">
+                            <button id="btnAtualizarTarefa">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="janelaEdicaoFundo"></div>
+
+                <!-- <div class="list">
+                    <input type="text" id="NewCardsList" class="textContent buttonCard " placeholder="+ Adicionar outra lista">
+                </div> -->
+                <div class="list conteudo">
+                    <div class="">
+                        <input class="textContent contentCard " id="NewCardsList" type="text" placeholder="+ Adicionar outra lista" style="font-size: 1.2rem; color: white; background: gray;">
+                        <br>
+                    </div>
+                    <div class="topo">
+                        <input type="text" id="inputNovaTarefa" placeholder="Adicione uma nova tarefa">
+                        <button id="btnAddTarefa">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <ul id="listaTarefas">
+                        <li>
+                            <span class="textoTarefa"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="janelaEdicao">
+                    <button id="janelaEdicaoBtnFechar">
+                        <i class="fa fa-remove fa-2x"></i>
+                    </button>
+                    <h2 id="idTarefaEdicao">#0001</h2>
+                    <hr>
+                    <form>
+                        <div class="frm-linha">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="inputTarefaNomeEdicao">
+                        </div>
+                        <div class="frm-linha">
+                            <button id="btnAtualizarTarefa">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="janelaEdicaoFundo"></div>
+
+            </div>
+        </section>
+        <script src="../../Style/js/todo.js"></script>
+        <script>
+            let searchBtn = document.querySelector(".bx-search-alt");
+            let btn = document.querySelector("#btn");
+
+            let arrow = document.querySelectorAll(".arrow");
+
+            for (var i = 0; i < arrow.length; i++) {
+                arrow[i].addEventListener("click", (e)=>{
+                    let arrowParent = e.target.parentElement.parentElement;
+                    arrowParent.classList.toggle("showMenu");
+                }
+                );
+            }
+            let sidebar = document.querySelector(".sidebar");
+            let sidebarbtn = document.querySelector(".bx-menu");
+            console.log(sidebarbtn);
+            sidebarbtn.addEventListener("click", ()=>{
+                sidebar.classList.toggle("close");
+            }
+            );
+
+            btn.onclick = function() {
+                sidebar.classList.toggle("active");
+            }
+
+            searchBtn.onclick = function() {
+                sidebar.classList.toggle("active");
+            }
+
+            const $CardElement = document.querySelector(".listGroup");
+
+            $CardElement.addEventListener("keydown", function(e) {
+                if (e.key === "Enter") {
+                    if (e.target.getAttribute("id") == 'cardList1' && e.target.value != "") {
+                        e.target.insertAdjacentHTML("beforebegin", '<input type="text" onblur="disabledCard(this)" onchange="editCard(this)" id="cardCreated" class="textContent buttonCard " value="' + e.target.value + '" disabled><input class="realButton material-icons" type="button" value="edit"><br/>');
+                        e.target.value = "";
+                    } else if (e.target.getAttribute('id') == "NewCardsList" && e.target.value != "") {
+                        e.target.parentNode.insertAdjacentHTML("beforebegin", '<div class="list"><input type="text" class="textContent contentCard" value="' + e.target.value + '"><br/><input type="text" id="cardList1" class="textContent buttonCard " placeholder="+ Adicionar Card"></div>');
+                        e.target.value = "";
+                    }
+                    // if(e.target.getAttribute("id")==='cardCreated' && e.target.value==""){
+                    //     e.target.nextSibling.nextSibling.remove();
+                    //     e.target.nextSibling.remove();
+                    //     e.target.remove();
+                    // }
+                }
+            })
+
+            $CardElement.addEventListener("click", function(e) {
+                if (e.target.value == "edit") {
+                    e.target.previousSibling.disabled = false;
+                    e.target.previousSibling.select();
+                } else if (e.target.getAttribute("id") == "cardCreated" && e.target.disabled == true) {
+                    console.log("abriuModal");
+                }
+            })
+
+            function disabledCard(e) {
+                e.disabled = true;
+            }
+
+            function editCard(e) {
+                if (e.value == "") {
+                    e.nextSibling.nextSibling.remove();
+                    e.nextSibling.remove();
+                    e.remove();
+                } else {
+                    e.disabled = true;
+                }
+            }
+        </script>
+    </body>
+</html>
