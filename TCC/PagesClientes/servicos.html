@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title>SIGEC</title>
+    <link rel="stylesheet" href="../../Style/css/style.css" />
+
+    <!--Boxicons CSS-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../../Style/css/animate.css">
+	<!--===============================================================================================-->	
+		<link rel="stylesheet" type="text/css" href="../../Style/css/util.css">
+	<!--===============================================================================================-->
+    <style>
+		h1,h2,h3,h4,h5,h6 {
+			margin: 0px;
+		}
+  
+		.limiter {
+			width: 100%;
+			margin: 0 auto;
+			height: 100%;
+			overflow: auto;
+		}
+		
+		.container-login100 {
+			width: 100%;  
+			min-height: 100vh;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			padding: 15px;
+			background: -webkit-linear-gradient(-135deg, #1c2967, #11101d);
+			background: -o-linear-gradient(-135deg, #1c2967, #11101d);
+			background: -moz-linear-gradient(-135deg, #1c2967, #11101d);
+			background: linear-gradient(-135deg, #1c2967, #11101d);
+		}
+
+        .btn .btn-secondary {
+            width: 100%;
+            margin-bottom: 10px
+        }
+
+		.txt2 {
+			font-family: Poppins-Regular;
+			font-size: 24px;
+			line-height: 1.5;
+			color: #666666;
+		}
+  
+		
+		.wrap-login100 {
+			width: 960px;
+			background: #fff;
+			border-radius: 10px;
+			overflow: hidden;
+			margin-bottom: 10%;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 20px 50px 33px 35px;
+		}
+        .wrap-login100 .search-wrap{
+            padding-top: 100px;
+            position: inherit;
+            z-index: 99;
+            color: #11101d;
+            font-size: 22px;
+            transition: all 0.4s ease;
+        }
+		
+		/*------------------------------------------------------------------
+		[  ]*/
+		.login100-pic {
+			width: 316px;
+		}
+		
+		.login100-pic img {
+			max-width: 100%;
+		}
+
+        .sidebar.close{
+            opacity: 1;
+        }
+		
+		
+		/*------------------------------------------------------------------
+		[  ]*/		
+		.login100-form-title {
+			font-family: Poppins-Bold;
+			font-size: 24px;
+			color: #333333;
+			line-height: 1.2;
+			text-align: center;
+		
+			width: 100%;
+			display: block;
+			padding-bottom: 54px;
+		}
+		/*------------------------------------------------------------------
+		[ Responsive ]*/
+		
+		
+		
+		@media (max-width: 992px) {
+			.wrap-login100 {
+			padding: 177px 90px 33px 85px;
+			}
+		
+			.login100-pic {
+			width: 35%;
+			}
+		
+			.login100-form {
+			width: 50%;
+			}
+		}
+		
+		@media (max-width: 768px) {
+			.wrap-login100 {
+			padding: 100px 80px 33px 80px;
+			}
+		
+			.login100-pic {
+			display: none;
+			}
+		
+			.login100-form {
+			width: 100%;
+			}
+		}
+		
+		@media (max-width: 576px) {
+			.wrap-login100 {
+			padding: 100px 15px 33px 15px;
+			}
+		}
+  
+    </style>
+</head>
+</head>
+<body>
+    <div class="sidebar">
+		<div class="logo-details">
+			<i class='bx bxs-calendar'></i>
+			<span class="logo_name">SIGEC</span>
+		</div>
+		<ul class="nav-links">
+			<li>
+				<a href="#">
+					<i class='bx bx-search-alt'></i>
+					<input type="text" placeholder="Pesquisar..." />
+				</a>
+				<ul class="sub-menu blank">
+					<li>
+						<a class="link_name" href="#">Pesquisar</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="inicioCliente.html">
+					<i class='bx bx-calendar-star'></i>
+					<span class="link_name">Calendário</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li>
+						<a class="link_name" href="inicioCliente.html">Calendário</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="agendar.html">
+					<i class='bx bxs-calendar-check'></i>
+					<span class="link_name">Agendar</span>
+					
+				</a>
+				<ul class="sub-menu blank">
+					<li>
+						<a class="link_name" href="agendar.html">Agendar</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="horariosAgendados.html">
+					<i class='bx bx-list-check'></i>
+					<span class="link_name">Horários Agendados</span>
+				</a>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="horariosAgendados.html">Horários Agendados</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="contacts.html">
+					<i class='bx bxs-contact'></i>
+					<span class="link_name">Lista de Contatos</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li>
+						<a class="link_name" href="contacts.html">Lista de Contatos</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="gerenciarPerfil.html">
+					<i class='bx bx-cog'></i>
+					<span class="link_name">Gerência</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li>
+						<a class="link_name" href="gerenciarPerfil.html">Gerência</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="profile-details">
+					<div class="profile-content">
+						<a href="gerenciarPerfil.html"><img src="../../Style/images/perfil.jpg" alt="perfil" /></a>
+					</div>
+					<div class="name-job">
+						<div class="profile_name">Hanna</div>
+						<div class="job">Cliente</div>
+					</div>
+					<i class='bx bx-log-out' id="log_out"></i>
+				</div>
+			</li>
+		</ul>
+	</div>
+    <section class="home-section">
+        <div class="home-content">
+            <nav>
+                <div class="sidebar-button">
+                    <i class='bx bx-menu' id="btn"></i>
+                    <span class="text">Menu</span>
+                </div>
+            </nav>
+        </div>
+		<div class="limiter">
+			<div class="container-login100">
+				<div class="wrap-login100">
+					<div class="search-wrap">
+						<i class='bx bx-search-alt'></i>
+                        <input type="text" placeholder="Pesquisar..." />
+					</div>
+	
+					<form class="login100-form validate-form">
+						<span class="login100-form-title">
+							<h1 style="margin-top: 1px;">Agendamentos de Horários</h1>
+						</span>
+						<a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Escolher Serviço</a>
+						<a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Escolher Empresa</a>
+	
+						<div class="text-center p-t-136">
+							<a class="txt2" href="inicioCliente.html">
+								Voltar a página inicial!
+								<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+							</a>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+		</div><div class="limiter">
+			<div class="container-login100">
+				<div class="wrap-login100">
+					<div class="login100-pic js-tilt" data-tilt>
+						
+					</div>
+	
+					<form class="login100-form validate-form">
+						<span class="login100-form-title">
+							<h1>Agendamentos de Horários</h1>
+							<h5>Realize os agendamentos de forma prática, simples e fácil!</h5>
+						</span>
+						<a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Oftamologista</a>
+						<a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Manicure</a>
+                        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Corte de cabelo</a>
+                        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Dentista</a>
+                        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Clínico Geral</a>
+                        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Massagista</a>
+                        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Sombrancelha</a>
+                        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Psicólogo</a>
+	
+						<div class="text-center p-t-136">
+							<a class="txt2" href="inicioCliente.html">
+								Voltar a página inicial!
+								<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+							</a>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+        
+    </section>
+
+    <!--<div class="body">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FSao_Paulo" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>-->
+	<!--===============================================================================================-->	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!--===============================================================================================-->
+	<script src="../../Style/js/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../Style/js/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="../../Style/js/main.js"></script>
+
+    <script>
+            let searchBtn = document.querySelector("bx-search-alt");
+            let btn = document.querySelector("#btn");
+
+            let arrow = document.querySelectorAll(".arrow");
+
+            for (var i = 0; i < arrow.length; i++) {
+                arrow[i].addEventListener("click", (e) => {
+                    let arrowParent = e.target.parentElement.parentElement;
+                    arrowParent.classList.toggle("showMenu");
+                });
+            }
+            let sidebar = document.querySelector(".sidebar");
+            let sidebarbtn = document.querySelector(".bx-menu");
+            console.log(sidebarbtn);
+            sidebarbtn.addEventListener("click", () => {
+                sidebar.classList.toggle("close");
+            });
+
+            btn.onclick = function () {
+                sidebar.classList.toggle("active");
+            }
+
+            searchBtn.onclick = function () {
+                sidebar.classList.toggle("active");
+            }
+    </script>
+</body> 
+</html>
